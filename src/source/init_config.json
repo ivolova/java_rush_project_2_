@@ -1,0 +1,142 @@
+{
+  "sizeX": 10,
+  "sizeY": 10,
+
+  "initMaxCountEntityOnCeil": {
+    "WOLF": 30,
+    "SNAKE": 123,
+    "FOX": 50,
+    "BEAR": 30,
+    "EAGLE": 166,
+    "HORSE": 23,
+    "DEER":	41,
+    "HARE":	750,
+    "HAMSTER": 10000,
+    "GOAT":	107,
+    "SHEEP": 156,
+    "KANGAROO":	149,
+    "COW": 20,
+    "DUCK":	500,
+    "CATERPILLAR": 10000,
+    "PLANT": 10000
+  },
+  "weight": {
+    "WOLF": 50,
+    "SNAKE": 2,
+    "FOX": 4,
+    "BEAR":	250,
+    "EAGLE": 6,
+    "HORSE": 300,
+    "DEER":	170,
+    "HARE":	3,
+    "HAMSTER": 0.03,
+    "GOAT":	65,
+    "SHEEP": 45,
+    "KANGAROO":	47,
+    "COW": 350,
+    "DUCK":	1,
+    "CATERPILLAR": 0.01,
+    "PLANT": 1
+  },
+  "countSteps": {
+    "WOLF": 3,
+    "SNAKE": 1,
+    "FOX": 3,
+    "BEAR":	2,
+    "EAGLE": 4,
+    "HORSE": 3,
+    "DEER":	3,
+    "HARE":	3,
+    "HAMSTER": 1,
+    "GOAT":	1,
+    "SHEEP": 1,
+    "KANGAROO":	2,
+    "COW": 1,
+    "DUCK": 1,
+    "CATERPILLAR": 1
+  },
+  "eatingsProbability": {
+    "WOLF": {
+      "SNAKE": 10,
+      "FOX": 10,
+      "EAGLE": 10,
+      "HORSE": 30,
+      "DEER": 40,
+      "HARE": 70,
+      "HAMSTER": 60,
+      "GOAT": 70,
+      "SHEEP": 20,
+      "KANGAROO": 20,
+      "COW": 30,
+      "DUCK": 80
+    },
+    "SNAKE": {
+      "HARE": 50,
+      "DUCK": 50,
+      "CATERPILLAR": 90
+    },
+    "FOX": {
+      "SNAKE": 20,
+      "EAGLE": 10,
+      "DEER": 5,
+      "HARE": 70,
+      "HAMSTER": 20,
+      "GOAT": 20,
+      "SHEEP": 5,
+      "KANGAROO": 5,
+      "DUCK": 80
+    },
+
+    "BEAR": {
+      "WOLF": 20,
+      "SNAKE": 30,
+      "FOX": 20,
+      "EAGLE": 30,
+      "HORSE": 70,
+      "DEER": 80,
+      "HARE": 80,
+      "HAMSTER": 70,
+      "GOAT": 70,
+      "SHEEP": 60,
+      "KANGAROO": 60,
+      "COW": 70,
+      "DUCK": 80
+    },
+    "EAGLE": {
+      "SNAKE": 50,
+      "HARE": 60,
+      "DUCK": 85,
+      "CATERPILLAR": 20
+    },
+    "HORSE": {
+      "PLANT": 100
+    },
+    "DEER": {
+      "PLANT": 100
+    },
+    "HARE": {
+      "PLANT": 100
+    },
+    "HAMSTER": {
+      "PLANT": 100
+    },
+    "GOAT": {
+      "PLANT": 100
+    },
+    "SHEEP": {
+      "PLANT": 100
+    },
+    "KANGAROO": {
+      "PLANT": 100
+    },
+    "COW": {
+      "PLANT": 100
+    },
+    "DUCK": {
+      "PLANT": 100
+    },
+    "CATERPILLAR": {
+      "PLANT": 100
+    }
+  }
+}
