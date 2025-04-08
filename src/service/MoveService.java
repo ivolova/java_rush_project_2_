@@ -37,9 +37,11 @@ public class MoveService {
         return targetCellMap;
     }
 
+
     private Optional<Cell> getTargetCell(Cell fromCeil, int countStep, List<Cell> cellList) {
         return getRandomCell(fromCeil, countStep, cellList);
     }
+
 
 
     private Optional<Cell> getRandomCell(Cell from, int countStep, List<Cell> cellList) {
@@ -53,8 +55,8 @@ public class MoveService {
         Collections.shuffle(existCellList);
 
         return Optional.ofNullable(existCellList.get(0));
+}
 
-    }
 
     private List<Coordinate> getCoordinates(Cell from, int countStep) {
 
@@ -75,6 +77,7 @@ public class MoveService {
     }
 
 
+
     private List<Cell> getExistTargetCells(List<Coordinate> coordinateList, List<Cell> cellList) {
 
         List<Cell> targetCellList = new ArrayList<>();
@@ -84,7 +87,6 @@ public class MoveService {
         }
         return targetCellList;
     }
-
 }
 
 

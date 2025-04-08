@@ -17,12 +17,10 @@ public class CoordinateService {
 
     public List<Cell> getCellsWithCoordinate(int x, List<Cell> cellList) {
     List<Cell> cellListByX = new ArrayList<>();
-        //System.out.println("============список клеток по x :"+ x);
         for (int y = 0; y < ConfigUtil.getSizeY(); y++) {
             Coordinate coordinate = new Coordinate(x, y);
             Optional<Cell> optionalCell = getCellByCoordinate(coordinate, cellList);
             optionalCell.ifPresent(cellListByX::add);
-            //System.out.println("x = "+ x+ " y = "+ y);
         }
         return cellListByX;
     }

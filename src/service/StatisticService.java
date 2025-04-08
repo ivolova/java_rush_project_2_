@@ -34,13 +34,6 @@ public class StatisticService {
         }
     }
 
-    public void getSmallStatisticByType(List<Cell> cellList, LocalTime localTime, String type) {
-        System.out.println("========================================================");
-        for (Cell cell : cellList) {
-            System.out.println(localTime.toString() + "  " + type + "  " + cell.toString() + " Количество " + cell.getEntityList().size());
-        }
-    }
-
     public void getVerySmallStatisticByType(List<Cell> cellList, LocalTime localTime, String type) {
         System.out.println("========================================================");
         Long countEntity = cellList.stream().flatMap(cell -> cell.getEntityList().stream()).count();

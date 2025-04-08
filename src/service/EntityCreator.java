@@ -35,7 +35,6 @@ public class EntityCreator {
     private List<Entity> createEntities(EntityType entityType, Integer count) {
 
         List<Entity> entityList = new ArrayList<>();
-        //System.out.println("тут у нас фабрика сразу нескольких объектов");
         for (int i = 0; i < count; i++) {
             Entity entity = createEntity(entityType);
             entityList.add(entity);

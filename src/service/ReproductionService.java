@@ -15,6 +15,7 @@ public class ReproductionService {
 
     Map<EntityType, Long> countEntitiesByEntityTypeOnCell;
 
+
     public List<Entity> getNewbornEntityList(List<Entity> entityList) {
         List<Entity> newbornList = new ArrayList<>();
          countEntitiesByEntityTypeOnCell = statisticService.getStatisticMapByEntityType(entityList);
@@ -28,11 +29,13 @@ public class ReproductionService {
         return newbornList;
     }
 
+
     private boolean needReproduction(EntityType entityType) {
 
         int maxCountEntityByType = ConfigUtil.getMaxCountEntityOnCeil(entityType);
         return ((countEntitiesByEntityTypeOnCell.get(entityType) >= COUNT_ENTITY_FOR_REPRODUCTION) && isTrueProbabilityToCreate() && maxCountEntityByType > countEntitiesByEntityTypeOnCell.get(entityType));
     }
+
 
     private boolean isTrueProbabilityToCreate() {
         return new Random().nextBoolean();

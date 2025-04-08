@@ -33,18 +33,18 @@ public class Cell {
 
     private final MoveService moveService = new MoveService();
 
-    public Cell(Coordinate coordinate, List<Entity> entityList) {
-        this.coordinate = coordinate;
-        this.entityList = entityList;
-        this.lock = new ReentrantLock();
-    }
-
     public ReentrantLock getLock() {
         return lock;
     }
 
     public Coordinate getCoordinate() {
         return coordinate;
+    }
+
+    public Cell(Coordinate coordinate, List<Entity> entityList) {
+        this.coordinate = coordinate;
+        this.entityList = entityList;
+        this.lock = new ReentrantLock();
     }
 
     public List<Entity> getEntityList() {
@@ -64,15 +64,18 @@ public class Cell {
         entityList.remove(entity);
     }
 
+
     public void runReproduction() {
         List<Entity> newbornList = reproductionService.getNewbornEntityList(entityList);
         entityList.addAll(newbornList);
     }
 
+
     public void runEating() {
         List<Entity> eatenList = eatingService.getEatenList(entityList);
         entityList.removeAll(eatenList);
     }
+
 
     public void runEntitiesMoving(List<Cell> targetCellList) {
 
@@ -93,18 +96,15 @@ public class Cell {
                             this.removeEntity(entityCellEntry.getKey());
                         }
                         targetCell.getLock().unlock();
-                        //System.out.println("Лочим " + targetCell.toString() + " Попытка = " + attempt);
                         break;
                     } else {
                         System.out.println("Не удалось залочить " + targetCell.toString() + "Попытка = " + attempt);
                     }
-
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
             }
         }
     }
-
 }
 

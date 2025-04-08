@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
 
 public class LifeCycleService {
 
-    private final static String START = "START";
     private final static String SCHEDULER = "SCHEDULER";
     private final static int INITIAL_DELAY = 0;
     private final static int PERIOD = 5;
@@ -27,9 +26,7 @@ public class LifeCycleService {
     public void startLife(List<Cell> cellList) throws InterruptedException {
 
         ScheduledExecutorService growPlantsScheduled = getGrowPlantsScheduled(cellList);
-
         ExecutorService lifeCycleExecutorService = getLifeCycleExecutorService(cellList, ConfigUtil.getSizeX());
-
         lifeCycleExecutorService.shutdown();
 
         while (!lifeCycleExecutorService.isTerminated()){
@@ -38,18 +35,18 @@ public class LifeCycleService {
         growPlantsScheduled.shutdown();
     }
 
+
     private ScheduledExecutorService getGrowPlantsScheduled(List<Cell> cellList) {
 
         ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-
         scheduledExecutorService.scheduleAtFixedRate(() -> {
             cellList.forEach(cell -> cell.addEntity(entityCreator.createEntity(EntityType.PLANT)));
             statisticService.getVerySmallStatisticByType(cellList, LocalTime.now(), SCHEDULER);
-
         }, INITIAL_DELAY, PERIOD, TimeUnit.SECONDS);
 
         return scheduledExecutorService;
     }
+
 
     private ExecutorService getLifeCycleExecutorService(List<Cell> cellList, int size) {
         ExecutorService executorService = Executors.newFixedThreadPool(size);

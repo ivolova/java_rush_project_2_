@@ -18,5 +18,4 @@ public enum EntityType {
     DUCK,
     CATERPILLAR,
     PLANT;
-
     }

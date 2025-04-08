@@ -1,9 +1,8 @@
 package repository.entity;
 
-import lombok.RequiredArgsConstructor;
 import repository.entity.enums.EntityType;
 
-@RequiredArgsConstructor
+
 public abstract class Entity {
 
     private final EntityType type;
